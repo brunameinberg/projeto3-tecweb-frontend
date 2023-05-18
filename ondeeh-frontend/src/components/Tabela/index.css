@@ -1,0 +1,24 @@
+table {
+  font-family: "Montserrat", sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  td, th {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+   
+
+.icone{
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
