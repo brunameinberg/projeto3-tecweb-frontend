@@ -13,18 +13,12 @@ function Paginainicial() {
 
     function atualizaPais(pais) {
       setPais(pais);
-      axios
-      .post(`http://127.0.0.1:8000/api/paises/${pais}`);
+      
     }
 
   return (
     <div className="App">
       <Appbar />
-      <Link to="../Login/index.js">
-      <button>
-      <img src="/perfil.png" className="icone" />
-      </button>
-      </Link>
       <Form atualizaPais={atualizaPais}/>
       <Tabela pais={pais}/>
     </div>

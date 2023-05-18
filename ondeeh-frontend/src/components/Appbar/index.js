@@ -17,7 +17,7 @@ export default function Appbar() {
     <img src="/interrogacao.png" className="icone" />
     </button>
 
-    <Link to="../Login/index.js">
+    <Link to="../Login/">
     <button type="submit">
     <img src="/perfil.png" className="icone" />
     </button>

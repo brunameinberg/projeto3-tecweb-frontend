@@ -229,6 +229,7 @@ export default function Tabela(props) {
   const [moedaSorteada, setMoedaSorteada] = useState('');
   const [linguaSorteada, setLinguaSorteada] = useState('');
   const [continenteSorteado, setContinenteSorteado] = useState('');
+  const [territorioSorteado, setTerritorioSorteado] = useState('');
 
 
   const salvarPaissorteado = () => {
@@ -236,10 +237,11 @@ export default function Tabela(props) {
       .get("https://servicodados.ibge.gov.br/api/v1/paises/" + valorAleatorio)
       .then((response) => {
         console.log('FUI CHAMADO MAIS DE UMA VEZ');
-        console.log(response.data[0].linguas.nome);
+        console.log(response.data[0].area.total);
         setMoedaSorteada(response.data[0]["unidades-monetarias"][0].nome);
         setLinguaSorteada(response.data[0].linguas[0].nome);
         setContinenteSorteado(response.data[0].localizacao.regiao.nome);
+        setTerritorioSorteado(response.data[0].area.total);
       })
   }
 
@@ -251,6 +253,7 @@ export default function Tabela(props) {
   const [moedaDigitada, setMoedaDigitada] = useState(String);
   const [linguaDigitada, setLinguaDigitada] = useState(String);
   const [continenteDigitado, setContinenteDigitado] = useState(String);
+  const [territorioDigitado, setTerritorioDigitado] = useState(parseInt);
   const [dados, setDados] = useState([]);
   const [contador, setContador] = useState(false);
   
@@ -268,6 +271,7 @@ export default function Tabela(props) {
         setMoedaDigitada(response.data[0]["unidades-monetarias"][0].nome);
         setLinguaDigitada(response.data[0].linguas[0].nome);
         setContinenteDigitado(response.data[0].localizacao.regiao.nome);
+        setTerritorioDigitado(response.data[0].area.total);
         setContador(true);
       })
   }
@@ -286,6 +290,8 @@ export default function Tabela(props) {
   console.log(`lingua sorteada ${linguaSorteada}`);
   console.log(`continente digitado ${continenteDigitado}`);
   console.log(`continente sorteado ${continenteSorteado}`);
+  console.log(`território digitado ${territorioDigitado}`);
+  console.log(`território sorteado ${territorioSorteado}`);
 
   const checaMoeda = () => {
     if (moedaDigitada === moedaSorteada) {
@@ -311,10 +317,20 @@ export default function Tabela(props) {
       return <img src="/vermelho.png" className="icone" />
     }
   }
+  const checaTerritório = () => {
+    if (territorioDigitado > territorioSorteado) {
+      return <img src="/setabaixo.png" className="icone" />
+    } else if (territorioDigitado < territorioSorteado) {
+      return <img src="/setacima.png" className="icone" />
+    }
+    else{
+      return <img src="/verde.webp" className="icone" />
+    }
+  }
 
   const addLinha = () => {
     setDados([...dados,{paistabela:props.pais, moeda:checaMoeda(), 
-      lingua: checaLingua(),continente: checaContinente() }])}
+      lingua: checaLingua(),continente: checaContinente(), territorio: checaTerritório() }])}
 
   useEffect (()=>{
     if (contador==true){
@@ -338,6 +354,9 @@ export default function Tabela(props) {
         <th>
         <img src="/continente.png" className="icone" />
         </th>
+        <th>
+        <img src="/territorio.png" className="icone" />
+        </th>
       </tr>
       </thead>
       <tbody>
@@ -347,6 +366,7 @@ export default function Tabela(props) {
             <td>{linha.moeda}</td>
             <td>{linha.lingua}</td>
             <td>{linha.continente}</td>
+            <td>{linha.territorio}</td>
           </tr>
         ))}
       </tbody>

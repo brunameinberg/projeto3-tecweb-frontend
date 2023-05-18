@@ -1,0 +1,55 @@
+
+.titulo{
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    font-weight: bold;
+    text-align: center;}
+
+.login{
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 80px;
+    background: #23463f;
+    border-radius: 15px ;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.usuario{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin: 10px;
+}
+.senha{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin: 10px;
+
+}
+label{
+    font-size: 23px;
+}
+.botao{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+    margin-top: 10px;
+
+}

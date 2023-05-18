@@ -11,10 +11,23 @@ export default function Login(props){
     
 
     return (
-        <form className="">
+      
+      <div>
+        <h1 className="titulo">Onde é?</h1>
+        <form className="login">
+        <label>
+          <b>Login
+        </b>
+        </label>
           <input className="usuario" type="text"  name="usuario"  placeholder="Login" />
+          <label>
+          <b>Senha
+        </b>
+        </label>
           <input className="senha" type="text"  name="senha"  placeholder="Senha" />
-          <button className="btn" type="submit">ir</button>
+          <button className="botao" type="submit">ir</button>
         </form>
+      </div>
+    
       );
 }
