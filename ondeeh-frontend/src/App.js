@@ -2,28 +2,24 @@ import Form from "./components/Form";
 import Appbar from "./components/Appbar";
 import Tabela from "./components/Tabela";
 import React from "react";
-import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
+import Rotas from "./Rotas";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Paginainicial from "./Paginainicial.js";
+import Login from './components/Login';
 
 
-function App() {
-  const [pais, setPais] = useState([]);
-
-    function atualizaPais(pais) {
-      setPais(pais);
-      axios
-      .post(`http://127.0.0.1:8000/api/paises/${pais}`);
-    }
-
+const App = () => {
   return (
-    <div className="App">
-      <Appbar />
-      
-      <Form atualizaPais={atualizaPais}/>
-      <Tabela pais={pais}/>
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="" element={<Paginainicial/>} />
+            <Route path="/Login" element={<Login/>} />
+        </Routes>
+        </BrowserRouter>
   );
 }
-
 export default App;
