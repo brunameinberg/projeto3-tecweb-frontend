@@ -7,3 +7,5 @@ Cronograma:
 - [x]  Sugestão de países
 - [x]  Adicionar território nos parâmetros
 - [ ]  Integrar a parte do Login
+- [ ]  Página do perfil
+- [ ]  Pontuação
