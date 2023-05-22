@@ -11,7 +11,13 @@ import Paginainicial from "./Paginainicial.js";
 import Login from './components/Login';
 
 
+
 const App = () => {
+  const[token, setToken] = useState('');
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
   return (
     <BrowserRouter>
         <Routes>

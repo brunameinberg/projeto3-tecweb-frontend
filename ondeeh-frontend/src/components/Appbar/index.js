@@ -12,10 +12,13 @@ export default function Appbar() {
   return (
 
     <div className="appbar">
-    <h1>Onde é?</h1>
+    
     <button onClick={()=>comoJoga()} type="submit">
     <img src="/interrogacao.png" className="icone" />
     </button>
+
+
+    <h1>Onde é?</h1>
 
     <Link to="../Login/">
     <button type="submit">
