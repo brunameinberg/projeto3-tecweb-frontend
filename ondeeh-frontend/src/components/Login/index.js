@@ -4,37 +4,43 @@ import "./index.css";
 import axios from "axios";
 
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:8080/Login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
-  }
 
 export default function Login({setToken}){
 
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
 
-    const handleSubmit = async e => {
+    function pegaLogin(e){
       e.preventDefault();
-      const token = await loginUser({
-        usuario,
-        senha
-      });
-      setToken(token);
-    }
+      setUsuario(usuario);
+      setSenha(senha);  
+      axios({
+        method: 'post',
+        url: 'http:///127.0.0.1:8000/api/token',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          username: usuario,
+          password: senha
+        }
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      console.log('USUARIO NÃO ENCONTRADO');
+      window.location.replace('/');
+    })
+    ;
+  }
+
     
 
     return (
       
       <div>
         <h1 className="titulo">Onde é?</h1>
-        <form className="login" onSubmit={handleSubmit}>
+        <form className="login" onSubmit={pegaLogin}>
         <label>
           <b>Login
         </b>
@@ -44,14 +50,10 @@ export default function Login({setToken}){
           <b>Senha
         </b>
         </label>
-          <input className="senha" type="text"  name="senha"  placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
-          <button className="botao" type="submit" >ir</button>
+          <input className="senha" type="text"  name="senha"  placeholder="Senha" senha={senha} onChange={e => setSenha(e.target.value)}/>
+          <button className="botao" type="submit">ir</button>
         </form>
       </div>
     
       );
 }
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-};

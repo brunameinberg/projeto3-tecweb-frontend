@@ -9,21 +9,21 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Paginainicial from "./Paginainicial.js";
 import Login from './components/Login';
+import Perfil from './components/Perfil';
 
 
 
 const App = () => {
-  const[token, setToken] = useState('');
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+
+
   return (
-    <BrowserRouter>
+    <BrowserRouter className = "app">
         <Routes>
             
             <Route path="" element={<Paginainicial/>} />
             <Route path="/Login" element={<Login/>} />
+            <Route path="/Perfil" element={<Perfil/>} />
             
         </Routes>
         </BrowserRouter>

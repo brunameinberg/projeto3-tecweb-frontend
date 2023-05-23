@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
+div{
+    font-family: Montserrat, sans-serif;
+}
 .titulo{
     font-size: 30px;
     margin-bottom: 40px;
     margin-top: 100px;
     font-weight: bold;
-    text-align: center;}
+    text-align: center;
+}
 
 .login{
     width: 382px;
@@ -19,6 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color:white;
 
 }
 
@@ -30,6 +36,7 @@
     border-radius: 3px;
     padding-left: 8px;
     margin: 10px;
+    
 }
 .senha{
     width: 300px;
