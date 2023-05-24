@@ -23,6 +23,23 @@ h1{
     
 }
 
+.botaojogar{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+    margin-top: 10px;
+    background-color: rgb(15 23 42);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
 .body{
     margin-top: 50px;
     display: flex;
@@ -36,4 +53,50 @@ h2{
     font-weight: bold;
     text-align: center;
     
+    
+}
+
+.pontos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.espaco{
+    color:rgb(15 23 42);
+}
+.pontuacao{
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    padding-left: 7px;
+    margin-top: 70px;
+    background-color: rgb(15 23 42);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid white;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.retangulo{
+    height: 400px;
+    width: 800px;
+    background-color: #ddd9ce;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pontuacoes{
+    font-size:x-large;
+    font-weight: bold;
+    margin-top: 10px;
 }

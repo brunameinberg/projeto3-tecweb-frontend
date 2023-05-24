@@ -29,7 +29,7 @@ export default function Login({setToken}){
       // handle error
       console.log(error);
       console.log('USUARIO NÃO ENCONTRADO');
-      window.location.replace('/');
+      window.location.replace('/Perfil');
     })
     ;
   }
@@ -40,6 +40,7 @@ export default function Login({setToken}){
       
       <div>
         <h1 className="titulo">Onde é?</h1>
+        <h2 className="titulo2"> Fazer Login</h2>
         <form className="login" onSubmit={pegaLogin}>
         <label>
           <b>Login
@@ -51,9 +52,29 @@ export default function Login({setToken}){
         </b>
         </label>
           <input className="senha" type="text"  name="senha"  placeholder="Senha" senha={senha} onChange={e => setSenha(e.target.value)}/>
-          <button className="botao" type="submit">ir</button>
+         
+          <button className="botao" type="submit">Logar</button>
+          
+        </form>
+        <h2 className="titulo2"> Fazer Cadastro</h2>
+        <form className="login" onSubmit={pegaLogin}>
+        <label>
+          <b>Login
+        </b>
+        </label>
+          <input className="usuario" type="text"  name="usuario"  placeholder="Login" onChange={e => setUsuario(e.target.value)}/>
+          <label>
+          <b>Senha
+        </b>
+        </label>
+          <input className="senha" type="text"  name="senha"  placeholder="Senha" senha={senha} onChange={e => setSenha(e.target.value)}/>
+         
+          <button className="botao" type="submit">Criar usuário</button>
+          
         </form>
       </div>
+
+      
     
       );
 }

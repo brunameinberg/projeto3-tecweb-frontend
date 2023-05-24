@@ -242,6 +242,7 @@ export default function Tabela(props) {
         setLinguaSorteada(response.data[0].linguas[0].nome);
         setContinenteSorteado(response.data[0].localizacao.regiao.nome);
         setTerritorioSorteado(response.data[0].area.total);
+        
       })
   }
 
@@ -259,7 +260,7 @@ export default function Tabela(props) {
   
 
   let UFpaisdigitado = paises[props.pais];
-  // console.log(props.pais);
+  //console.log(paises[props.pais]);
   
   console.log(`UFpaisdigitado ${UFpaisdigitado}`);
   const pegadadosPaisdigitado = () => {
@@ -330,8 +331,14 @@ export default function Tabela(props) {
 
   const addLinha = () => {
     setDados([...dados,{paistabela:props.pais, moeda:checaMoeda(), 
-      lingua: checaLingua(),continente: checaContinente(), territorio: checaTerritório() }])}
+      lingua: checaLingua(),continente: checaContinente(), territorio: checaTerritório() }])
+    checaVitoria();}
 
+  function checaVitoria(){
+    if (moedaDigitada === moedaSorteada && linguaDigitada === linguaSorteada && continenteDigitado === continenteSorteado && territorioDigitado === territorioSorteado){
+      window.location.replace('/Vitoria');
+    }
+  }
   useEffect (()=>{
     if (contador==true){
      addLinha();
