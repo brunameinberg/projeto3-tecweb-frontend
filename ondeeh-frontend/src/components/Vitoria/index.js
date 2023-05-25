@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./index.css";
+import axios from "axios";
 
 export default function Vitoria(props){
 
@@ -211,18 +212,49 @@ export default function Vitoria(props){
         'Zimbábue': 'ZW'
       };
 
-    let UFpaisdigitado = props.pais
+    let UFpaisdigitado = paises[props.pais];
     console.log(`UFpaisdigitado ${UFpaisdigitado}`);
+
+    const [descricaodopais, setDescricaodopais] = useState("");
+    const [capitaldopais, setCapitaldopais] = useState("");
+
+    useEffect(() => {
+      console.log('entrei aqui');
+      pegadadosPaisdavitoria();
+    }, []);
+
+    const pegadadosPaisdavitoria = () => {
+      console.log(`UFpaisdigitado ${UFpaisdigitado}aaaaaaaaaaaaaaaaaaa`);
+      axios
+        .get("https://servicodados.ibge.gov.br/api/v1/paises/" + UFpaisdigitado)
+        .then((response) => {
+          console.log(response.data[0])
+          setCapitaldopais(response.data[0].governo.capital.nome);
+          setDescricaodopais(response.data[0].historico);
+ 
+        })
+    }
     
+
 
     return (
       <div>
-        <h1 className="titulo">Onde é?</h1>
-        <h1 className="titulo">Vitória</h1>
-        <h1 className="titulo">Você acertou!</h1>
-        <h1 className="titulo">O país é {UFpaisdigitado}</h1>
+        <div>
+          <h1 className="titulo">Onde é?</h1>
+          <h1 className="titulo">Parabéns! Você acertou!</h1>
+        </div>
+        <div>
+          <h1 className="titulo">O país é {props.pais}</h1>
+          <h2 className="titulo">A capital é {capitaldopais}</h2>
+        </div>
+        <div className="centraliza">
+          <h1 >Saiba mais sobre {props.pais}: </h1>
+          <div className="descricao">
+            <h2 >{descricaodopais}</h2>
+          </div>
+        </div>
         <button className="botaojogar" onClick={vaiJogar}>
-            <h2>Jogar</h2>
+            <h2>Jogar de novo</h2>
         </button>
         
       </div>

@@ -1,0 +1,36 @@
+h2{
+    color: white;
+    
+}
+
+
+
+.descricao{
+    width:1500px;
+    height: 500px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+    margin-top: 10px;
+    background-color: rgb(15 23 42);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 35px;
+
+}
+
+.centraliza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
