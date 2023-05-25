@@ -242,6 +242,7 @@ export default function Tabela(props) {
         setLinguaSorteada(response.data[0].linguas[0].nome);
         setContinenteSorteado(response.data[0].localizacao.regiao.nome);
         setTerritorioSorteado(response.data[0].area.total);
+        localStorage.setItem('pais', JSON.stringify(chaveAleatoria));
         
       })
   }
@@ -337,6 +338,7 @@ export default function Tabela(props) {
   function checaVitoria(){
     if (moedaDigitada === moedaSorteada && linguaDigitada === linguaSorteada && continenteDigitado === continenteSorteado && territorioDigitado === territorioSorteado){
       window.location.replace('/Vitoria');
+      
     }
   }
   useEffect (()=>{

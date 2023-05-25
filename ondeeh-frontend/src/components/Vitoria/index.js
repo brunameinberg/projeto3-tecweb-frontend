@@ -212,8 +212,7 @@ export default function Vitoria(props){
         'Zimbábue': 'ZW'
       };
 
-    let UFpaisdigitado = paises[props.pais];
-    console.log(`UFpaisdigitado ${UFpaisdigitado}`);
+    
 
     const [descricaodopais, setDescricaodopais] = useState("");
     const [capitaldopais, setCapitaldopais] = useState("");
@@ -221,7 +220,15 @@ export default function Vitoria(props){
     useEffect(() => {
       console.log('entrei aqui');
       pegadadosPaisdavitoria();
+
     }, []);
+
+    const dicionario = localStorage.getItem("pais");
+    const pais = JSON.parse(dicionario);
+    
+
+    let UFpaisdigitado = paises[pais];
+    console.log(`UFpaisdigitado ${UFpaisdigitado}`);
 
     const pegadadosPaisdavitoria = () => {
       console.log(`UFpaisdigitado ${UFpaisdigitado}aaaaaaaaaaaaaaaaaaa`);
@@ -244,11 +251,11 @@ export default function Vitoria(props){
           <h1 className="titulo">Parabéns! Você acertou!</h1>
         </div>
         <div>
-          <h1 className="titulo">O país é {props.pais}</h1>
+          <h1 className="titulo">O país é {pais}</h1>
           <h2 className="titulo">A capital é {capitaldopais}</h2>
         </div>
         <div className="centraliza">
-          <h1 >Saiba mais sobre {props.pais}: </h1>
+          <h1 >Saiba mais sobre {pais}: </h1>
           <div className="descricao">
             <h2 >{descricaodopais}</h2>
           </div>
