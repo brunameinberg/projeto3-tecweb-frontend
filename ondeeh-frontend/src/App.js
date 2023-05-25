@@ -11,6 +11,7 @@ import Paginainicial from "./Paginainicial.js";
 import Login from './components/Login';
 import Perfil from './components/Perfil';
 import Vitoria from './components/Vitoria';
+import Cadastro from './components/Cadastro';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/Login" element={<Login/>} />
             <Route path="/Perfil" element={<Perfil/>} />
             <Route path="/Vitoria" element={<Vitoria/>} />
+            <Route path="/Cadastro" element={<Cadastro/>} />
         </Routes>
         </BrowserRouter>
   );

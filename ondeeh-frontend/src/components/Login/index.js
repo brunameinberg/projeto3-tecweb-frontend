@@ -24,12 +24,14 @@ export default function Login({setToken}){
           username: usuario,
           password: senha
         }
+    }).then(function(response){
+      window.location.replace('/Perfil');
     })
     .catch(function (error) {
       // handle error
       console.log(error);
       console.log('USUARIO NÃO ENCONTRADO');
-      window.location.replace('/Perfil');
+      window.location.replace('/Cadastro');
     })
     ;
   }
@@ -56,22 +58,7 @@ export default function Login({setToken}){
           <button className="botao" type="submit">Logar</button>
           
         </form>
-        <h2 className="titulo2"> Fazer Cadastro</h2>
-        <form className="login" onSubmit={pegaLogin}>
-        <label>
-          <b>Login
-        </b>
-        </label>
-          <input className="usuario" type="text"  name="usuario"  placeholder="Login" onChange={e => setUsuario(e.target.value)}/>
-          <label>
-          <b>Senha
-        </b>
-        </label>
-          <input className="senha" type="text"  name="senha"  placeholder="Senha" senha={senha} onChange={e => setSenha(e.target.value)}/>
-         
-          <button className="botao" type="submit">Criar usuário</button>
-          
-        </form>
+
       </div>
 
       
