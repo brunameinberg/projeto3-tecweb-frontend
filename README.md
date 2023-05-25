@@ -6,6 +6,8 @@ Cronograma:
 - [x]  Tela de Login
 - [x]  Sugestão de países
 - [x]  Adicionar território nos parâmetros
-- [ ]  Integrar a parte do Login
-- [ ]  Página do perfil
+- [x]  Integrar a parte do Login
+- [x]  Página do perfil
 - [ ]  Pontuação
+- [x]  Página da vitória
+- [x]  Parte de cadastro
