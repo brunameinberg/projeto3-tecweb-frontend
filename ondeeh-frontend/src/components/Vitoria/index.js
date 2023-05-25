@@ -246,8 +246,13 @@ export default function Vitoria(props){
 
     return (
       <div>
-        <div>
-          <h1 className="titulo">Onde é?</h1>
+        <div className="up">
+          <div className="header">
+            <h1 className="titulo">Onde é?</h1>
+            <button className="botaojogar" onClick={vaiJogar}>
+              <h2>Jogar de novo</h2>
+            </button>
+          </div>
           <h1 className="titulo">Parabéns! Você acertou!</h1>
         </div>
         <div>
@@ -260,9 +265,6 @@ export default function Vitoria(props){
             <h2 >{descricaodopais}</h2>
           </div>
         </div>
-        <button className="botaojogar" onClick={vaiJogar}>
-            <h2>Jogar de novo</h2>
-        </button>
         
       </div>
     

@@ -3,7 +3,28 @@ h2{
     
 }
 
+.titulo{
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
 
+}
+
+.up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
 
 .descricao{
     width:1500px;
@@ -33,4 +54,20 @@ h2{
     align-items: center;
     flex-direction: column;
 
+}
+
+.botaojogar{
+    width: 300px;
+    height: 70px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    margin-top: 10px;
+    background-color: rgb(15 23 42);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: 0.5s;
 }

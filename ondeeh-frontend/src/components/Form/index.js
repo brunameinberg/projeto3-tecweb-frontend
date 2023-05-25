@@ -219,15 +219,20 @@ export default function Form(props) {
           'Zimbábue'
         ];
         
+  function clearFields() {
+          document.getElementById("textfield1").value = "";
+         
+     }
+
   return (
-    <form className="form-card" onSubmit={salvarPais}>
-      <input className="form-card-title" type="text"  name="pais"  onChange={(e)=>setPais(e.target.value)} placeholder="Digite o nome do país" aria-autocomplete="list" list="paises-lista" />
+    <form className="form-card" onSubmit={salvarPais} >
+      <input className="form-card-title" id = "textfield1" type="text"  name="pais"  onChange={(e)=>setPais(e.target.value)} placeholder="Digite o nome do país" aria-autocomplete="list" list="paises-lista" />
       <datalist id="paises-lista">
         {paises.map((pais, index) => (
           <option key={index} value={pais} />
         ))}
       </datalist>
-      <button className="btn" onClick={()=>atualizaPais(pais)} type="submit">ir</button>
+      <button className="btn" onClick={()=>{atualizaPais(pais); clearFields()}}   type="submit">ir</button>
     </form>
   );
 
