@@ -226,6 +226,10 @@ export default function Vitoria(props){
     const dicionario = localStorage.getItem("pais");
     const pais = JSON.parse(dicionario);
     
+    const dicionario2 = localStorage.getItem("pontuacao");
+    const pontuacao = JSON.parse(dicionario2);
+    console.log(`dicionario ${dicionario2}`);
+    console.log(`pontuacao ${pontuacao}`);	
 
     let UFpaisdigitado = paises[pais];
     console.log(`UFpaisdigitado ${UFpaisdigitado}`);
@@ -254,6 +258,7 @@ export default function Vitoria(props){
             </button>
           </div>
           <h1 className="titulo">Parabéns! Você acertou!</h1>
+          <h1 className="titulo">Você fez {pontuacao} pontos!</h1>
         </div>
         <div>
           <h1 className="titulo">O país é {pais}</h1>

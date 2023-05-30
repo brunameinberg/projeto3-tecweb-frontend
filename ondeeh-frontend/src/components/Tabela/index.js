@@ -258,6 +258,7 @@ export default function Tabela(props) {
   const [territorioDigitado, setTerritorioDigitado] = useState(parseInt);
   const [dados, setDados] = useState([]);
   const [contador, setContador] = useState(false);
+  const [pontuacao, setPontuacao] = useState(10);
   
 
   let UFpaisdigitado = paises[props.pais];
@@ -333,14 +334,31 @@ export default function Tabela(props) {
   const addLinha = () => {
     setDados([...dados,{paistabela:props.pais, moeda:checaMoeda(), 
       lingua: checaLingua(),continente: checaContinente(), territorio: checaTerritório() }])
-    checaVitoria();}
+    checaVitoria();
+    setPontuacao(pontuacao-1);
+  }
+
+  const dicionario = localStorage.getItem("usuario");
+  const usuario = JSON.parse(dicionario);
+  console.log(pontuacao);
 
   function checaVitoria(){
     if (moedaDigitada === moedaSorteada && linguaDigitada === linguaSorteada && continenteDigitado === continenteSorteado && territorioDigitado === territorioSorteado){
       window.location.replace('/Vitoria');
+      localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
       
-    }
-  }
+      axios.post({
+        method: 'post',
+        url: 'http:///127.0.0.1:8000/api/token/api/pontuacao',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          username: usuario,
+          pontuacao: pontuacao
+        }
+    })
+  }}
   useEffect (()=>{
     if (contador==true){
      addLinha();
@@ -370,7 +388,7 @@ export default function Tabela(props) {
       </thead>
       <tbody>
         {dados.map((linha,index) => (
-          <tr key={index}>
+          <tr key={index} >
             <td>{linha.paistabela}</td>
             <td>{linha.moeda}</td>
             <td>{linha.lingua}</td>
