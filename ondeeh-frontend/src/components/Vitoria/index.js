@@ -257,13 +257,10 @@ export default function Vitoria(props){
               <h2>Jogar de novo</h2>
             </button>
           </div>
-          <h1 className="titulo">Parabéns! Você acertou!</h1>
-          <h1 className="titulo">Você fez {pontuacao} pontos!</h1>
+          <h1 className="titulo">Parabéns, você acertou! Sua pontuação foi: {pontuacao} pontos!</h1>
+          <h1 className="titulo">O país é {pais} e sua capital é: {capitaldopais}</h1>
         </div>
-        <div>
-          <h1 className="titulo">O país é {pais}</h1>
-          <h2 className="titulo">A capital é {capitaldopais}</h2>
-        </div>
+          
         <div className="centraliza">
           <h1 >Saiba mais sobre {pais}: </h1>
           <div className="descricao">

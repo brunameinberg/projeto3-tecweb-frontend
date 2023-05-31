@@ -13,8 +13,6 @@ h2{
 
 .up{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     
 }
@@ -23,6 +21,7 @@ h2{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
     
 }
 
@@ -70,4 +69,6 @@ h2{
     cursor: pointer;
     border: 2px solid white;
     transition: 0.5s;
+    
 }
+
