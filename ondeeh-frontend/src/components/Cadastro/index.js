@@ -7,6 +7,7 @@ import axios from "axios";
 export default function Cadastro (){
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
+    
 
     function cadastrar(e){
         e.preventDefault();
@@ -22,7 +23,10 @@ export default function Cadastro (){
             username: usuario,
             password: senha
             }
-        }).then((res)=>{window.location.replace('/Perfil')});
+        }).then((res)=>{
+            
+            window.location.replace('/Perfil')
+        });
     }
 
     return (

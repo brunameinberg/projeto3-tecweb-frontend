@@ -25,6 +25,8 @@ export default function Login({setToken}){
           password: senha
         }
     }).then(function(response){
+      response.data.token = setToken(response.data.token);
+      console.log(response.data.token);
       window.location.replace('/Perfil');
     })
     .catch(function (error) {
