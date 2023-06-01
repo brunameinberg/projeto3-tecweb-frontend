@@ -9,8 +9,7 @@ export default function Login({setToken}){
 
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
-    const dicionario = localStorage.getItem("usuario");
-    const user = JSON.parse(dicionario);
+    
     
 
 
