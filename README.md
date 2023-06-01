@@ -2,6 +2,7 @@
 
 #### Projeto de Tecnologias-Web do quarto semestre de Engenhaia de Computação do Insper.
 #### link do vídeo de funcionamento: https://youtu.be/_MNw1NWLtZg
+#### visão geral do projeto no arquivo "onde é.png"
 ##### Cronograma:
 - [x]  Trazer feitos do projeto 2
 - [x]  Modernizar css
