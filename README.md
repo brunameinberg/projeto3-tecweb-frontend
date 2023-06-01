@@ -1,7 +1,8 @@
 # projeto3-tecweb-frontend
 
-Projeto de Tecnologias-Web do quarto semestre de Engenhaia de Computação do Insper.
-Cronograma:
+#### Projeto de Tecnologias-Web do quarto semestre de Engenhaia de Computação do Insper.
+#### link do vídeo de funcionamento: https://youtu.be/_MNw1NWLtZg
+##### Cronograma:
 - [x]  Trazer feitos do projeto 2
 - [x]  Modernizar css
 - [x]  Tela de Login
