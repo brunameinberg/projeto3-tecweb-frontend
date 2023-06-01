@@ -9,6 +9,11 @@ export default function Login({setToken}){
 
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
+    const dicionario = localStorage.getItem("usuario");
+    const user = JSON.parse(dicionario);
+    
+
+
 
     function pegaLogin(e){
       e.preventDefault();
@@ -36,6 +41,7 @@ export default function Login({setToken}){
     ;
   }
 
+
     
 
     return (
@@ -55,7 +61,7 @@ export default function Login({setToken}){
         </label>
           <input className="senha" type="text"  name="senha"  placeholder="Senha" senha={senha} onChange={e => setSenha(e.target.value)}/>
          
-          <button className="botao" type="submit">Logar</button>
+          <button className="botao" type="submit" >Logar</button>
           
         </form>
 

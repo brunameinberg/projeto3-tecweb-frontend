@@ -13,6 +13,8 @@ export default function Cadastro (){
         e.preventDefault();
         setUsuario(usuario);
         setSenha(senha);  
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+       
         axios({
             method: 'post',
             url: 'http:///127.0.0.1:8000/api/users/',

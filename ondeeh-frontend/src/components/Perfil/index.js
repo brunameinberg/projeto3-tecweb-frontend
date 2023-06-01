@@ -11,6 +11,8 @@ export default function Perfil(){
       }
     const dicionario2 = localStorage.getItem("pontuacao");
     const pontuacao = JSON.parse(dicionario2);
+    const dicionario = localStorage.getItem("usuario");
+    const user = JSON.parse(dicionario);
 
     return (
         <div className="perfil">
@@ -22,7 +24,7 @@ export default function Perfil(){
            
         </div >
         <div className="body">
-            <h2 className="espaco">__________________</h2>
+            <h2 className="espaco">Olá {user}!</h2>
             <h1>Perfil</h1>
             <button className="botaojogar" onClick={vaiJogar}>
             <h2>Jogar</h2>
